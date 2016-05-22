@@ -22,8 +22,6 @@ var arrivetime;
 var lat1;
 var long1;
 var timezonehere;
-
-var snowmen_are_creepy = ['avril lavigne is weird', 77777777777] // she really is
 var chicken_monkey_duck;
 
 function distance(lat1, long1, lat2, long2) {
@@ -38,9 +36,13 @@ function answer(lat1, long1, lat2, long2, currenttime, timezonehere, timezonethe
 }
 
 function why_not_a_little_spanish_flea() {
+  var snowmen_are_creepy = ['avril lavigne is weird', 77777777777] // she really is
   var currentlocation = document.getElementById("there was a little spanish flea").value;
-  var currenttime = +document.getElementById("a record star he thought he'd be").value + +document.getElementById("he'd heard of singers like beatles").value/60;
+  var hours = +document.getElementById("a record star he thought he'd be").value;
+  var minutes = +document.getElementById("he'd heard of singers like beatles").value;
+  var currenttime = hours + minutes/60;
   var flightspeed = +document.getElementById("and chipmunks he'd seen on tv").value;
+  // why not a little spanish flea?
   for (x in thingamabob) {
     if (thingamabob[x].place == currentlocation) {
       lat1=thingamabob[x].lat;
@@ -56,5 +58,4 @@ function why_not_a_little_spanish_flea() {
   }
   snowmen_are_creepy[1] += 0.00000001 // fucking floating point errors
   document.getElementById("batman").innerHTML = 'Your fastest route to get a hold of a McDonald\'s Breakfast would be to go to ' + snowmen_are_creepy[0] + ' and it would take you ' + Math.floor(snowmen_are_creepy[1]) + ' hours and ' + Math.floor((snowmen_are_creepy[1]-Math.floor(snowmen_are_creepy[1]))*60) + ' minutes'
-  snowmen_are_creepy = ['avril lavigne is weird', 77777777777]
 }
